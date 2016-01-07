@@ -18,6 +18,8 @@ module V1
 
 		def show
 			@category = Category.find(params[:id])
+
+			@result = Category.get_data(@category.id)
   	end
 
 		private
