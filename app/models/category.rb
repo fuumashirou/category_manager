@@ -9,7 +9,7 @@ class Category < ActiveRecord::Base
 
     if(category_data.parent_id != nil)
     	category_data_parent = Category.find(category_data.parent_id)
-    	hash = {:parent_id => parent_id, :parent_name => category_data_parent.name}
+      hash = {:parent_id => category_data_parent.id, :parent_name => category_data_parent.name}
     	family_data.push(hash)
     end
 

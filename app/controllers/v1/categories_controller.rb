@@ -20,7 +20,12 @@ module V1
 			@category = Category.find(params[:id])
 
 			@result = Category.get_data(@category.id)
-			 @output = @result.to_json
+			@output = @result.to_json
+
+			respond_to do |format|
+				format.html
+				format.json {render json:@output}
+			end
   	end
 
 		private
