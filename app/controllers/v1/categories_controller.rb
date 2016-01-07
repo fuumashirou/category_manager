@@ -20,6 +20,7 @@ module V1
 			@category = Category.find(params[:id])
 
 			@result = Category.get_data(@category.id)
+			 @output = @result.to_json
   	end
 
 		private
